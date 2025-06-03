@@ -11,4 +11,6 @@ for i = 1:numJobs
     jobArray(end+1) = Job(duration, requiredResources, priority, arrivalTime);
 end
 
-save('jobInputData.mat', 'jobArray');
+jobTimeSeries = timeseries(jobArray);
+
+save('jobInputData.mat', 'jobTimeSeries');
