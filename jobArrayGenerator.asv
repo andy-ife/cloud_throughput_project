@@ -1,0 +1,24 @@
+numJobs = 20;
+jobArray = Job.empty;
+
+arrivalTime = (0:.5:9.5)';
+
+for i = 1:numJobs
+    duration = rand() * 0 + 1;
+    requiredResources = randi([1, 4]);
+    priority = randi([1, 3]);
+    jobArray(end+1) = Job(duration, requiredResources, priority, arrivalTime(i,:));
+end
+
+% convert Job array to 4x20 MATLAB array
+jobMatArray = zeros(20, 4);
+for i = 1:20
+    jobMatArray(i, :) = [
+        jobArray(i).arrivalTime; 
+        jobArray(i).duration;
+        jobArray(i).requiredResources; 
+        jobArray(i).priority];
+end
+
+% create time series
+jobTs = timeseries(jobMatArray(:, 2:end), jobMatArray(:, 1));
