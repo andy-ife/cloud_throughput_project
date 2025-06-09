@@ -1,4 +1,8 @@
-numJobs = 20; % increase this value for bigger sample size
+% global simulation params
+numJobs = 20;
+maxResources = 4;
+maxPriority = 3;
+
 jobArray = Job.empty;
 
 % get last time step
@@ -7,11 +11,11 @@ last = 0 + 0.5*(numJobs - 1);
 % job arrival times in steps of 0.5
 arrivalTime = (0:.5:last)';
 
-% create array of Jobs
+% randomly create array of Jobs
 for i = 1:numJobs
-    duration = rand() * 1;
-    requiredResources = randi([1, 4]);
-    priority = randi([1, 3]);
+    duration = rand() * 1; % duration ranges from 0 - 1 seconds
+    requiredResources = randi([1, maxResources]);
+    priority = randi([1, maxPriority]);
     jobArray(end+1) = Job(duration, requiredResources, priority, arrivalTime(i,:));
 end
 
@@ -32,7 +36,7 @@ timevals = jobMatArray(:, 1);
 % create time series
 jobTsFCFS = timeseries(datavals, timevals);
 jobTsSJN = timeseries(sortrows(datavals, 1), timevals);
-jobTsPriority = timeseries(sortrows(datavals, 3), timevals);
+jobTsPriority = timeseries(sortrows(datavals, 3, "descend"), timevals);
 
 % save time series
 save("jobTsFileFCFS.mat", "jobTsFCFS");
