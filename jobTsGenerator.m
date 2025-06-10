@@ -1,15 +1,17 @@
 % global simulation params
-numJobs = 20;
-maxResources = 4;
+numJobs = 1000;
+maxResources = 10;
 maxPriority = 3;
+step = .1; % must match simulink step
+totalResources = 15;
 
 jobArray = Job.empty;
 
 % get last time step
-last = 0 + 0.5*(numJobs - 1);
+last = 0 + step*(numJobs - 1);
 
-% job arrival times in steps of 0.5
-arrivalTime = (0:.5:last)';
+% job arrival times in steps of step
+arrivalTime = (0:step:last)';
 
 % randomly create array of Jobs
 for i = 1:numJobs

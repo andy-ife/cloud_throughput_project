@@ -1,17 +1,19 @@
 % global simulation params
-numJobs = 20;
-maxResources = 4;
+numJobs = 1000;
+maxResources = 10;
 maxPriority = 3;
+step = .1; % must match simulink step
+totalResources = 20;
 
 jobArray = Job.empty;
 
 % get last time step
-last = 0 + 0.5*(numJobs - 1);
+last = 0 + step*(numJobs - 1);
 
-% job arrival times in steps of 0.5
-arrivalTime = (0:.5:last)';
+% job arrival times in steps of step
+arrivalTime = (0:step:last)';
 
-% create array of Jobs
+% randomly create array of Jobs
 for i = 1:numJobs
     duration = rand() * 1; % duration ranges from 0 - 1 seconds
     requiredResources = randi([1, maxResources]);
@@ -36,7 +38,7 @@ timevals = jobMatArray(:, 1);
 % create time series
 jobTsFCFS = timeseries(datavals, timevals);
 jobTsSJN = timeseries(sortrows(datavals, 1), timevals);
-jobTsPriority = timeseries(sortrows(datavals, 3,), timevals);
+jobTsPriority = timeseries(sortrows(datavals, 3, "descend"), timevals);
 
 % save time series
 save("jobTsFileFCFS.mat", "jobTsFCFS");
