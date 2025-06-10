@@ -1,9 +1,9 @@
 % global simulation params
-numJobs = 1000;
-maxResources = 10;
-maxPriority = 3;
-step = .1; % must match simulink step
-totalResources = 15;
+numJobs = 6000;
+maxResources = 32;
+maxPriority = 8;
+step = 2.5; % must match simulink step
+totalResources = 1000;
 
 jobArray = Job.empty;
 
@@ -41,6 +41,6 @@ jobTsSJN = timeseries(sortrows(datavals, 1), timevals);
 jobTsPriority = timeseries(sortrows(datavals, 3, "descend"), timevals);
 
 % save time series
-save("jobTsFileFCFS.mat", "jobTsFCFS");
-save("jobTsFileSJN.mat", "jobTsSJN");
-save("jobTsFilePriority.mat", "jobTsPriority");
+save("jobTsFileFCFS_scenario4.mat", "jobTsFCFS");
+save("jobTsFileSJN_scenario4.mat", "jobTsSJN");
+save("jobTsFilePriority_scenario4.mat", "jobTsPriority");
