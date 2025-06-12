@@ -1,0 +1,147 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   18 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "availableResources"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "availableResources"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "currentJobDuration"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "currentJobDuration"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "currentJobPriority"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "currentJobPriority"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "currentJobResources"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "currentJobResources"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "dqNum"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "dqNum"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "currentCounter"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "currentCounter"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "pendingJobDuration"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "pendingJobDuration"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "pendingJobResources"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "pendingJobResources"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c3_untitled"\
+      Description  "StateIsActive"\
+      SFName       "is_active_c3_untitled"\
+      Path         "is_active_c3_untitled"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_c3_untitled"\
+      Description  "StateActiveChild"\
+      SFName       "is_c3_untitled"\
+      Path         "is_c3_untitled"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "queue"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "untitled:1:27:230-235"\
+      Dimensions   [10000,2]\
+    }\
+    ChartData {\
+      Name         "queue_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "untitled:1:27:230-235"\
+    }\
+    ChartData {\
+      Name         "endIndex"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "untitled:1:27:317-325"\
+    }\
+    ChartData {\
+      Name         "endIndex_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "untitled:1:27:317-325"\
+    }\
+    ChartData {\
+      Name         "startIndex"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "untitled:1:27:397-407"\
+    }\
+    ChartData {\
+      Name         "startIndex_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "untitled:1:27:397-407"\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

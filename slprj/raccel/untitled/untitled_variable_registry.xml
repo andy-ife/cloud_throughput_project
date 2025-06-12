@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/slsa_mm_param_graph/R2021b">
+  <slsa.mm.param.graph.VariableRegistry type="slsa.mm.param.graph.VariableRegistry" uuid="21388959-ef4f-4240-9946-b05a18570931">
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="9a6eb4ac-ad3f-4839-8903-578933f72bd3">
+      <blockPath>untitled/Job Timeseries (SJN)</blockPath>
+      <parameterName>VariableName</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="29a1b035-6ea1-4dad-bd87-7dadc7defcbf"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="9d51a8b9-a53f-43e4-ae02-7bba845bf026">
+      <blockPath>untitled/Job Timeseries (Priority)</blockPath>
+      <parameterName>VariableName</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="bd7122e4-1b9a-407b-9fd9-745cd2dab3bc"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <blockParameters type="slsa.mm.param.graph.BlockParameter" uuid="7617bc7a-d0bd-44b9-9cd3-46dfa9dea3ca">
+      <blockPath>untitled/Job Timeseries (FCFS)</blockPath>
+      <parameterName>VariableName</parameterName>
+      <expression type="slsa.mm.param.graph.Expression" uuid="5669401c-7930-434b-8898-24e7f8027b3e"/>
+      <needsEvaluationResult>false</needsEvaluationResult>
+      <tunabilityType>Nontunable</tunabilityType>
+    </blockParameters>
+    <expressions type="slsa.mm.param.graph.Expression" uuid="29a1b035-6ea1-4dad-bd87-7dadc7defcbf">
+      <expression>jobTsSJN</expression>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="9a6eb4ac-ad3f-4839-8903-578933f72bd3"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="1896fda4-b82b-4c91-8e9d-52dabcac8e1a"/>
+    </expressions>
+    <expressions type="slsa.mm.param.graph.Expression" uuid="bd7122e4-1b9a-407b-9fd9-745cd2dab3bc">
+      <expression>jobTsPriority</expression>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="9d51a8b9-a53f-43e4-ae02-7bba845bf026"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="f54c1f06-4129-45a9-8c02-1d1282e197e8"/>
+    </expressions>
+    <expressions type="slsa.mm.param.graph.Expression" uuid="5669401c-7930-434b-8898-24e7f8027b3e">
+      <expression>jobTsFCFS</expression>
+      <users type="slsa.mm.param.graph.BlockParameter" uuid="7617bc7a-d0bd-44b9-9cd3-46dfa9dea3ca"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="d8725ee3-c8c6-485f-b496-9099ab156b2f"/>
+    </expressions>
+    <name>untitled</name>
+    <variables type="slsa.mm.param.graph.Variable" uuid="1896fda4-b82b-4c91-8e9d-52dabcac8e1a">
+      <expressions type="slsa.mm.param.graph.Expression" uuid="29a1b035-6ea1-4dad-bd87-7dadc7defcbf"/>
+      <name>jobTsSJN</name>
+      <workspace type="slsa.mm.param.graph.Workspace" uuid="7abc257f-eb1f-42f7-ad27-20385b66b4b0"/>
+    </variables>
+    <variables type="slsa.mm.param.graph.Variable" uuid="f54c1f06-4129-45a9-8c02-1d1282e197e8">
+      <expressions type="slsa.mm.param.graph.Expression" uuid="bd7122e4-1b9a-407b-9fd9-745cd2dab3bc"/>
+      <name>jobTsPriority</name>
+      <workspace type="slsa.mm.param.graph.Workspace" uuid="7abc257f-eb1f-42f7-ad27-20385b66b4b0"/>
+    </variables>
+    <variables type="slsa.mm.param.graph.Variable" uuid="d8725ee3-c8c6-485f-b496-9099ab156b2f">
+      <expressions type="slsa.mm.param.graph.Expression" uuid="5669401c-7930-434b-8898-24e7f8027b3e"/>
+      <name>jobTsFCFS</name>
+      <workspace type="slsa.mm.param.graph.Workspace" uuid="7abc257f-eb1f-42f7-ad27-20385b66b4b0"/>
+    </variables>
+    <workspaces type="slsa.mm.param.graph.Workspace" uuid="7abc257f-eb1f-42f7-ad27-20385b66b4b0">
+      <name>global-workspace</name>
+      <variables type="slsa.mm.param.graph.Variable" uuid="1896fda4-b82b-4c91-8e9d-52dabcac8e1a"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="f54c1f06-4129-45a9-8c02-1d1282e197e8"/>
+      <variables type="slsa.mm.param.graph.Variable" uuid="d8725ee3-c8c6-485f-b496-9099ab156b2f"/>
+    </workspaces>
+    <contextManager type="slsa.mm.param.graph.ContextManager" uuid="20b81d18-e350-4a87-adbe-003cca22e61a"/>
+  </slsa.mm.param.graph.VariableRegistry>
+</MF0>
